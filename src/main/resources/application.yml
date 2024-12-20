@@ -1,0 +1,22 @@
+server:
+  port: 4000
+
+spring:
+  application:
+    name: spring-boot-api-starter
+  datasource:
+    url: jdbc:postgresql://localhost:5432/<db_name>
+    username: <db_user>
+    password: <db_passwd>
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+security:
+  jwt:
+    secret-key: <your_secret_key_in_base64> # base64 encoded
+
+    expiration: 86400000 # 1 day
+    refresh-token:
+      expiration: 604800000 # 7 days
